@@ -1,10 +1,10 @@
 # Maven and Java 11
 FROM maven:3.8.1-jdk-11
 
-WORKDIR /selenium
+WORKDIR /seleniumtest
 
-RUN git clone https://github.com/abdulrav/pos-selenium-tests /selenium
+RUN git clone https://github.com/abdulrav/pos-selenium-tests /seleniumtest
 
 RUN git pull
 
-CMD mvn clean test -DsuiteXmlFile=${suite_xml} -Dserver.ip=${server_ip}
+CMD mvn clean test -DsuiteXmlFile=testng.xml
